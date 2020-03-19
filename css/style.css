@@ -1,169 +1,198 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Spartan', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Spartan", sans-serif;
 }
 
 header {
-    background-color: white;
-    display: flex;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
 
-    box-shadow: 0px 4px 20px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 20px -5px rgba(0, 0, 0, 0.75);
 
-    z-index: 1;
+  z-index: 2;
 }
 
 h1 {
-    padding-left: 3vw;
-    padding-right: 3vw;
-    font-size: 1.7rem;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  font-size: 1.7rem;
 }
 
 header ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    list-style-type: none;
-    text-align: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
 }
 
 .navList {
-    display: flex;
-    background-color: white;
-    /* margin-top: 24px; */
-    position: absolute;
-    flex-direction: column;
-    padding-left: 1px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* margin-top: 24px; */
+  position: absolute;
+  flex-direction: column;
+  padding-left: 1px;
 
-    width: 100%;
-    left: 0px;
-    top: 100%;
+  width: 100%;
+  left: 0px;
+  top: 100%;
 
-    transition: all 700ms ease;
-    max-height: 0px;
-    overflow: hidden;
-    background-color: rgb(245, 245, 245);
-    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.75);
-
-} 
+  transition: all 700ms ease;
+  max-height: 0px;
+  overflow: hidden;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.75);
+}
 
 li:hover .navList {
-    max-height: 500px;
-    background-color: white;
+  max-height: 500px;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .navList li {
-    padding-top: 7px;
-    padding-bottom: 12px;
-    font-weight: 400;
+  padding-top: 7px;
+  padding-bottom: 12px;
+  font-weight: 400;
 }
 
 ul li {
-    position: relative;
+  position: relative;
 }
 
 .navBarItems {
-    border-left: 2px solid skyblue;
+  border-left: 2px solid skyblue;
 }
 
 .navBarItems > li {
-    padding: 2.5vw;
-    padding-left: 4.5vw;
-    padding-right: 4.5vw;
-    background-color: rgb(245, 245, 245);
-    transition: background-color 700ms;
-    font-weight: 700;
+  padding: 2.5vw;
+  padding-left: 4.5vw;
+  padding-right: 4.5vw;
+  background-color: rgb(245, 245, 245);
+  transition: background-color 700ms;
+  font-weight: 700;
 }
 
 .navBarItems > li:hover {
-    background-color: white;
-    color: skyblue;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: skyblue;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .img-background {
-    height: 60vh;
-    overflow: hidden;
-    position: relative;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
 }
 
 @media (max-height: 700px) {
-    .img-background {
-        height: 420px;
-    }
+  .img-background {
+    height: 420px;
+  }
 }
 
 h2 {
-    position: absolute;
-    left: 15%;
-    top: 45%;
-    z-index: 2;
-    color: white;
-    font-size: 3.5vw;
-    font-weight: 600;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 15%;
+  top: 45%;
+  z-index: 1;
+  color: white;
+  font-size: 4rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes showImage {
-    from {
-        left: -100%;
-    }
-    to {
-        left: 0;
-    }
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
 }
 
-img {
-    display: none;
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    filter: brightness(0.65);
-    z-index: 0;
-    height: 100%;
+.background-image {
+  display: none;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  filter: brightness(0.65);
+  z-index: 0;
+  height: 100%;
 }
 
 .showImage {
-    display: block;
-    animation: showImage;
-    animation-duration: 1300ms;
-    animation-fill-mode: forwards;
+  display: block;
+  animation: showImage;
+  animation-duration: 1300ms;
+  animation-fill-mode: forwards;
 }
 
 .card-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 60px;
 }
 
 .card-info a {
-    width: 200px;
-    height: 100px;
-    background-color: white;
-    padding: 30px;
-    margin: 40px;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.30);
+  width: 260px;
+  height: 25vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* padding: 30px; */
+  margin: 40px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
 
-    transition: all 200ms;
+  transition: all 200ms;
 }
 
 .card-info a p {
-    
+  margin: 20px;
 }
 
-.card-info div:hover {
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.4)
+.card-info a:hover {
+  box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.4);
+}
+
+.card-info img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 50%;
+}
+
+@media (max-width: 800px) {
+  header {
+    background-color: white;
+    bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 12vh;
+  }
+
+  .navList {
+    display: none;
+  }
+
+  .navList li {
+    background-color: white;
+  }
+
+  .navBarItems > li {
+    background-color: white;
+  }
 }

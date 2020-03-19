@@ -1,31 +1,29 @@
-let images = document.querySelectorAll("img");
+let images = document.querySelectorAll(".img-background > img");
 let currentImage = 0;
 let nextImageNumber = 1;
 
 function nextImage(currentImage, nextImageNumber, images) {
+  console.log("remove: " + currentImage);
+  console.log("add: " + nextImageNumber);
 
-    console.log("remove: " + currentImage);
-    console.log("add: " + nextImageNumber);
+  images[nextImageNumber].classList.add("showImage");
 
-    images[nextImageNumber].classList.add("showImage");
-
-    setTimeout( () => {
-        images[currentImage].classList.remove("showImage");
-    }, 1300)
+  setTimeout(() => {
+    images[currentImage].classList.remove("showImage");
+  }, 1300);
 }
 
 setInterval(() => {
-    nextImage(currentImage, nextImageNumber, images)
+  nextImage(currentImage, nextImageNumber, images);
 
-    currentImage++;
-    nextImageNumber++;
+  currentImage++;
+  nextImageNumber++;
 
-    if(currentImage == 3) {
-        currentImage = 0;
-    } 
+  if (currentImage == 3) {
+    currentImage = 0;
+  }
 
-    if(nextImageNumber == 3) {
-        nextImageNumber = 0;
-    }
-
+  if (nextImageNumber == 3) {
+    nextImageNumber = 0;
+  }
 }, 5000);
