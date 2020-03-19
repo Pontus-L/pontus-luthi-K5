@@ -141,3 +141,29 @@ img {
     animation-duration: 1300ms;
     animation-fill-mode: forwards;
 }
+
+.card-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 60px;
+}
+
+.card-info a {
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    padding: 30px;
+    margin: 40px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.30);
+
+    transition: all 200ms;
+}
+
+.card-info a p {
+    
+}
+
+.card-info div:hover {
+    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.4)
+}
