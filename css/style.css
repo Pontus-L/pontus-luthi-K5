@@ -161,6 +161,7 @@ h2 {
 
 .card-info a p {
   margin: 20px;
+  line-height: 1.5;
 }
 
 .card-info a:hover {
@@ -175,6 +176,7 @@ h2 {
 }
 
 footer {
+  width: 100%;
   height: 150px;
   background-color: rgb(50, 50, 50);
   margin-top: 100px;
