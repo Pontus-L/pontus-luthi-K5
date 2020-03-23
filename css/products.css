@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.products {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.5);
+  width: 75vw;
+  padding: 5vw;
+  margin-top: 5vh;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.products div {
+  background-color: rgb(50, 50, 50);
+  height: 20vh;
+  width: 15vw;
+  min-width: 150px;
+  margin: 5vw;
+}
+
+.products div h1 {
+  font-size: 1rem;
+  margin-top: 1vh;
+  color: white;
+  text-align: center;
+}
+
+.products div img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.cart {
+  display: flex;
+}
