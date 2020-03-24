@@ -54,5 +54,13 @@
 .cart ul li {
   text-align: left;
   margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart ul li div {
+  width: 27%;
+  display: flex;
+  justify-content: space-between;
 }
 

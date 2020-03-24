@@ -37,8 +37,23 @@ function renderAllItems() {
   htmlCart.innerHTML = "";
   for (let i = 0; i < cart.length; i++) {
     let cartItem = document.createElement("li");
-    cartItem.innerHTML = cart[i].item + "  price: " + (cart[i].price * cart[i].quantity) + "  quantity: " + cart[i].quantity;
+    cartItem.innerHTML = cart[i].item;
+    
+    
+
+    let cartItemPriceQuantity = document.createElement("div");
+    let cartItemPrice = document.createElement("span");
+    cartItemPrice.innerHTML = (cart[i].price * cart[i].quantity) + " kr";
+    cartItemPriceQuantity.appendChild(cartItemPrice);
+
+    let cartItemQuantity = document.createElement("span");
+    cartItemQuantity.innerHTML = cart[i].quantity + " st";
+    cartItemPriceQuantity.appendChild(cartItemQuantity);
+
+    cartItem.appendChild(cartItemPriceQuantity);
+
     htmlCart.appendChild(cartItem);
+
   }
 }
 
