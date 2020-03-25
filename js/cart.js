@@ -1,20 +1,26 @@
 let cart = [];
 
-let products = document.querySelectorAll(".products > div > h1");
+console.log(allProducts);
+console.log(newProducts);
+
+let productButtons = document.querySelectorAll(".products > ul > li > button");
+let productPrices = document.querySelectorAll(".price");
+let products = document.querySelectorAll(".name");
+console.log(products);
+
 let htmlCart = document.querySelector(".cart > ul");
-sessionStorage.setItem("totalCost", 0);
 
 for (let i = 0; i < products.length; i++) {
-  products[i].parentElement.addEventListener("click", () => {
-    addToCart(products[i]);
+  productButtons[i].addEventListener("click", () => {
+    addToCart(products[i], productPrices[i]);
   });
 }
 
-function addToCart(element) {
+function addToCart(element, price) {
   if (checkForItem(element)) {
     editItem(element);
   } else {
-    cart.push({item: element.innerHTML, price: 10, quantity: 1});
+    cart.push({item: element.innerHTML, price: price.innerHTML, quantity: 1});
     renderAllItems();
   }
 }
@@ -66,6 +72,4 @@ function editItem(element) {
       renderAllItems();
     } 
   }
-
-  
 }
