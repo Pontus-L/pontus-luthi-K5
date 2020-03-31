@@ -3,9 +3,6 @@ let currentImage = 0;
 let nextImageNumber = 1;
 
 function nextImage(currentImage, nextImageNumber, images) {
-  console.log("remove: " + currentImage);
-  console.log("add: " + nextImageNumber);
-
   images[nextImageNumber].classList.add("showImage");
 
   setTimeout(() => {

@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script defer src="js/products.js"></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/admin.js"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/products.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Spartan&display=swap"
       rel="stylesheet"
     />
-    <script defer src="js/products.js"></script>
-    <script defer src="js/cart.js"></script>
   </head>
   <body>
     <header>
@@ -55,7 +55,7 @@
         Protection
       </h2>
       <img
-        class="showImage background-image background-image-1"
+        class="showImage background-image"
         src="https://images.unsplash.com/photo-1580094687196-cbc2bdab67e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
         alt="man with face mask"
       />
@@ -70,21 +70,44 @@
         alt="empty toilet roll"
       />
     </div>
-    <div class="cart">
-      <ul>
-        <li>Your cart is empty! Add some items from below!</li>
-      </ul>
-    </div>
-    <div class="products"></div>
+    <form class="loginForm">
+      <fieldset class="fieldset">
+        <label for="input-username">Enter username</label>
+        <input
+          class="username-input"
+          type="text"
+          name="username"
+          id="input-username"
+          placeholder="Username"
+        />
+        <label for="input-password">Enter password</label>
+        <input
+          class="password-input"
+          type="password"
+          name="password"
+          id="input-password"
+          placeholder="Password"
+        />
+        <button type="submit">Login</button>
+      </fieldset>
+    </form>
 
-    <footer>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Donkey</li>
-      </ul>
-      <p>&copy; Copyright 2020 Pontus Lüthi</p>
-    </footer>
+    <!-- <form class="productForm">
+      <label for="input-1">Enter Name</label>
+      <input
+        type="text"
+        name="productName"
+        id="input-1"
+        placeholder="Product name"
+      />
+      <label for="input-2">Enter Price</label>
+      <input
+        type="text"
+        name="productPrice"
+        id="input-2"
+        placeholder="Product Price"
+      />
+      <button type="submit">Submit</button>
+    </form> -->
   </body>
 </html>
