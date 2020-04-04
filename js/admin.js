@@ -1,8 +1,27 @@
 let loginRequest = new XMLHttpRequest();
 loginRequest.open("GET", "../data/logins.json", false);
 loginRequest.send(null);
-
 let logins = JSON.parse(loginRequest.responseText);
+
+let allProducts = null;
+if (localStorage.getItem("myList")) {
+  allProducts = JSON.parse(localStorage.getItem("myList"));
+} else {
+  try {
+    let requestProducts = new XMLHttpRequest();
+    requestProducts.open("GET", "../data/products.json", false);
+    requestProducts.send(null);
+    allProducts = JSON.parse(requestProducts.responseText);
+    localStorage.setItem("myList", JSON.stringify(allProducts));
+    allProducts = JSON.parse(localStorage.getItem("myList"));
+  } catch (error) {
+    console.log(error);
+    let requestProducts = new XMLHttpRequest();
+    requestProducts.open("GET", "../data/products.json", false);
+    requestProducts.send(null);
+    allProducts = JSON.parse(requestProducts.responseText);
+  }
+}
 
 let loginForm = document.querySelector(".loginForm");
 loginForm.addEventListener("submit", function(e) {
@@ -24,11 +43,11 @@ loginForm.addEventListener("submit", function(e) {
 
 function changeForm() {
   console.log("nice");
-  let form = document.querySelector("form");
-  form.classList.remove("loginForm");
+  document.querySelector("body").removeChild(document.querySelector("form"));
+
+  let form = document.createElement("form");
+  document.querySelector("body").appendChild(form);
   form.classList.add("productForm");
-  let oldFieldset = document.querySelector("form > fieldset");
-  loginForm.removeChild(oldFieldset);
 
   let productFieldset = document.createElement("fieldset");
   let nameInput = document.createElement("input");
@@ -61,7 +80,7 @@ function changeForm() {
   button.type = "submit";
   button.innerHTML = "Submit";
 
-  loginForm.appendChild(productFieldset);
+  form.appendChild(productFieldset);
 
   let productForm = document.querySelector(".productForm");
 
@@ -74,6 +93,8 @@ function changeForm() {
       .value;
 
     allProducts.push({ name: productName, price: parseInt(productPrice) });
+    localStorage.setItem("myList", JSON.stringify(allProducts));
+
     console.log(allProducts);
   });
 }
