@@ -41,6 +41,8 @@ loginForm.addEventListener("submit", function(e) {
   }
 });
 
+let removeForm;
+
 function changeForm() {
   console.log("nice");
   document.querySelector("body").removeChild(document.querySelector("form"));
@@ -94,9 +96,55 @@ function changeForm() {
 
     allProducts.push({ name: productName, price: parseInt(productPrice) });
     localStorage.setItem("myList", JSON.stringify(allProducts));
-
+    allProducts = JSON.parse(localStorage.getItem("myList"));
     console.log(allProducts);
+    createRemoveDiv();
   });
+  createRemoveDiv();
+}
+
+function createRemoveDiv() {
+  if (document.querySelector(".removeDiv")) {
+    document
+      .querySelector("body")
+      .removeChild(document.querySelector(".removeDiv"));
+  }
+  let removeDiv = document.createElement("div");
+  removeDiv.className = "removeDiv";
+  document.querySelector("body").appendChild(removeDiv);
+
+  let newProducts = document.createElement("ul");
+
+  for (let i = 0; i < allProducts.length; i++) {
+    let newProduct = document.createElement("li");
+    let newProductPrice = document.createElement("span");
+    let newProductName = document.createElement("span");
+    let newProductButton = document.createElement("button");
+    let newProductPriceName = document.createElement("div");
+
+    newProductButton.addEventListener("click", () => {
+      allProducts.splice(i, 1);
+      localStorage.setItem("myList", JSON.stringify(allProducts));
+      allProducts = JSON.parse(localStorage.getItem("myList"));
+      createRemoveDiv();
+    });
+
+    newProductName.classList.add("name");
+    newProductPrice.classList.add("price");
+
+    newProductButton.innerHTML = "Remove";
+    newProductName.innerHTML = allProducts[i].name;
+    newProductPrice.innerHTML = allProducts[i].price;
+
+    newProductPriceName.appendChild(newProductName);
+    newProductPriceName.appendChild(newProductPrice);
+
+    newProduct.appendChild(newProductPriceName);
+    newProduct.appendChild(newProductButton);
+    newProducts.appendChild(newProduct);
+  }
+
+  removeDiv.appendChild(newProducts);
 }
 
 function checkPassword(input) {

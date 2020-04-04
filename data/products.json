@@ -1,30 +1,30 @@
 [
-    {
-        "name": "Toiletpaper",
-        "price": 10
-    }, 
-    {
-        "name": "Handsanitizer",
-        "price": 20
-    },
-    {
-        "name": "Rent a Cabin",
-        "price": 1000
-    },
-    {
-        "name": "Handgun",
-        "price": 100
-    },
-    {
-        "name": "Donkey",
-        "price": 40000
-    },
-    {
-        "name": "Monkey",
-        "price": 30000
-    },
-    {
-        "name": "Gorilla",
-        "price": 20000
-    }
+  {
+    "name": "Toiletpaper (2 Layers)",
+    "price": 10
+  },
+  {
+    "name": "Handsanitizer",
+    "price": 20
+  },
+  {
+    "name": "Rent a Cabin",
+    "price": 1000
+  },
+  {
+    "name": "Handgun",
+    "price": 100
+  },
+  {
+    "name": "Toiletpaper (3 Layers)",
+    "price": 40
+  },
+  {
+    "name": "Bazooka",
+    "price": 1000
+  },
+  {
+    "name": "A i Webbutveckling",
+    "price": "Blod Svett och Tårar"
+  }
 ]
