@@ -61,6 +61,15 @@ function renderAllItems() {
     cartItem.appendChild(cartItemPriceQuantity);
 
     htmlCart.appendChild(cartItem);
+
+    let clearButton = document.createElement("button");
+    clearButton.innerHTML = "Clear Cart";
+    clearButton.addEventListener("click", () => {
+      cart.splice(i, 1);
+      renderAllItems();
+    });
+
+    cartItem.appendChild(clearButton);
   }
 }
 

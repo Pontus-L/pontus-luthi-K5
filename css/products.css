@@ -4,7 +4,6 @@
 }
 
 .products {
-  display: flex;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -12,15 +11,13 @@
   width: 75vw;
   padding: 5vw;
   margin-top: 5vh;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 .products ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  
+  justify-content: space-evenly;
 }
 
 .products li {
@@ -92,4 +89,3 @@
   display: flex;
   justify-content: space-between;
 }
-

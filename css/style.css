@@ -26,7 +26,8 @@ h1 {
   font-size: 1.7rem;
 }
 
-header ul {
+header ul,
+.smallHeader {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -82,7 +83,16 @@ ul li {
   font-weight: 700;
 }
 
-.navBarItems > li:hover {
+.smallHeader a {
+  padding: auto;
+}
+
+.smallHeader {
+  display: none;
+}
+
+.navBarItems > li:hover,
+.smallHeader a:hover {
   background-color: rgba(255, 255, 255, 0.95);
   color: skyblue;
 }
@@ -221,6 +231,10 @@ footer p {
     height: 12vh;
   }
 
+  h1 {
+    display: none;
+  }
+
   .navList {
     display: none;
   }
@@ -231,5 +245,14 @@ footer p {
 
   .navBarItems > li {
     background-color: white;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  .smallHeader {
+    display: flex;
+    justify-content: space-evenly;
   }
 }
