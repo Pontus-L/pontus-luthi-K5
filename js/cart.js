@@ -1,12 +1,8 @@
 let cart = [];
 
-console.log(allProducts);
-console.log(newProducts);
-
 let productButtons = document.querySelectorAll(".products > ul > li > button");
 let productPrices = document.querySelectorAll(".price");
 let products = document.querySelectorAll(".name");
-console.log(products);
 
 let htmlCart = document.querySelector(".cart > ul");
 
@@ -66,6 +62,7 @@ function renderAllItems() {
     clearButton.innerHTML = "Clear Cart";
     clearButton.addEventListener("click", () => {
       cart.splice(i, 1);
+      console.log("click");
       renderAllItems();
     });
 

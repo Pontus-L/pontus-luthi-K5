@@ -26,5 +26,9 @@
   {
     "name": "A i Webbutveckling",
     "price": "Blod Svett och Tårar"
+  }, 
+  {
+    "name": "Jeep",
+    "price":  10000
   }
 ]
